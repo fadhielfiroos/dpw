@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Fadhiel Fauzi Firoos" />
+    <meta name="nim" content="253307020" />
+    <title>Galeri Foto</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+      }
+      header {
+        background-color: #666;
+        padding: 30px;
+        text-align: center;
+        font-size: 35px;
+        color: white;
+      }
+      nav {
+        float: left;
+        width: 18%;
+        min-height: 500px;
+        background: #ccc;
+        padding: 15px;
+      }
+      nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+      nav ul li {
+        margin-bottom: 5px;
+      }
+      nav ul li a {
+        text-decoration: none;
+        color: #333;
+        font-size: 13px;
+      }
+      nav ul li a:hover {
+        color: #000;
+        text-decoration: underline;
+      }
+      nav ul li a.active {
+        font-weight: bold;
+        color: #000;
+      }
+      .content-area {
+        float: left;
+        padding: 20px;
+        width: 82%;
+        background-color: #f1f1f1;
+        min-height: 500px;
+      }
+      section::after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      footer {
+        background-color: #777;
+        padding: 10px;
+        text-align: center;
+        color: white;
+        clear: both;
+      }
+      @media (max-width: 600px) {
+        nav,
+        .content-area {
+          width: 100%;
+          float: none;
+        }
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #ffffff;
+        color: white;
+        padding: 20px;
+        margin: 0;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 5px;
+        color: #e0aaff;
+        font-size: 2em;
+        letter-spacing: 2px;
+      }
+
+      .subtitle {
+        text-align: center;
+        color: #aaa;
+        margin-bottom: 30px;
+        font-size: 0.95em;
+      }
+
+      .galeri {
+        display: flex;
+        flex-wrap: wrap; /* item turun ke baris baru jika penuh */
+        justify-content: center;
+        gap: 12px;
+        max-width: 1260px;
+        margin: 0 auto;
+      }
+
+      .galeri-item {
+        /*nim 20*/
+        width: 20px;
+        height: 20px;
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+        position: relative;
+      }
+
+      .galeri-item:hover {
+        transform: scale(1.06);
+        box-shadow: 0 8px 25px rgba(224, 170, 255, 0.5);
+      }
+
+      .galeri-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .galeri-item .caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.55);
+        color: white;
+        font-size: 12px;
+        text-align: center;
+        padding: 5px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .galeri-item:hover .caption {
+        opacity: 1;
+      }
+
+      .info {
+        text-align: center;
+        margin-top: 25px;
+        color: #aaa;
+        font-size: 0.85em;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h3>Praktikum Desain & Pemrograman Web</h3>
+    </header>
+
+    <section>
+      <nav>
+        <ul>
+          <li><a href="box_model.html">Box Model</a></li>
+          <li><a href="flexbox.html">Flexbox</a></li>
+          <li><a href="galeri.html">Galeri</a></li>
+          <li><a href="grid_layout.html">Grid Layout</a></li>
+          <li><a href="inline_grid.html">Inline Grid</a></li>
+          <li><a href="grid_layout2.html">Grid Layout 2</a></li>
+          <li><a href="Layout.html">Layout </a></li>
+        </ul>
+      </nav>
+      <div class="content-area">
+        <h3
+          style="
+            margin-top: 0;
+            color: #444;
+            border-bottom: 2px solid #aaa;
+            padding-bottom: 8px;
+          "
+        >
+          Galeri Foto
+        </h3>
+
+        <div class="galeri">
+          <div class="galeri-item">
+            <img src="gambar\gambar1.jpg" alt="Foto 1" />
+            <div class="caption">Foto 1</div>
+          </div>
+          <div class="galeri-item">
+            <img src="gambar\gambar2.jpg" alt="Foto 2" />
+            <div class="caption">Foto 2</div>
+          </div>
+          <div class="galeri-item">
+            <img src="gambar\gambar3.jpg" alt="Foto 3" />
+            <div class="caption">Foto 3</div>
+          </div>
+          <div class="galeri-item">
+            <img src="gambar\gambar4.jpg" alt="Foto 4" />
+            <div class="caption">Foto 4</div>
+          </div>
+          <div class="galeri-item">
+            <img src="gambar\gambar5.jpg" alt="Foto 5" />
+            <div class="caption">Foto 5</div>
+          </div>
+          <div class="galeri-item">
+            <img src="gambar\gambar6.jpg" alt="Foto 6" />
+            <div class="caption">Foto 6</div>
+          </div>
+          <div class="galeri-item">
+            <img src="gambar\gambar7.jpeg" alt="Foto 7" />
+            <div class="caption">Foto 7</div>
+          </div>
+          <div class="galeri-item">
+            <img src="gambar\gambar8.jpg" alt="Foto 8" />
+            <div class="caption">Foto 8</div>
+          </div>
+          <div class="galeri-item">
+            <img src="gambar\gambar9.jpg" alt="Foto 9" />
+            <div class="caption">Foto 9</div>
+          </div>
+          <div class="galeri-item">
+            <img src="gambar\gambar10.jpeg" alt="Foto 10" />
+            <div class="caption">Foto 10</div>
+          </div>
+          <div class="galeri-item">
+            <img src="gambar\gambar11.jpg" alt="Foto 11" />
+            <div class="caption">Foto 11</div>
+          </div>
+          <div class="galeri-item">
+            <img src="gambar\gambar12.jpg" alt="Foto 12" />
+            <div class="caption">Foto 12</div>
+          </div>
+          <div class="galeri-item">
+            <img src="gambar\gambar13.jpg" alt="Foto 13" />
+            <div class="caption">Foto 13</div>
+          </div>
+          <div class="galeri-item">
+            <img src="gambar\gambar14.jpg" alt="Foto 14" />
+            <div class="caption">Foto 14</div>
+          </div>
+          <div class="galeri-item">
+            <img src="gambar\gambar15.jpg" alt="Foto 15" />
+            <div class="caption">Foto 15</div>
+          </div>
+          <div class="galeri-item">
+            <img src="gambar\gambar16.jpg" alt="Foto 16" />
+            <div class="caption">Foto 16</div>
+          </div>
+          <div class="galeri-item">
+            <img src="gambar\gambar17.jpg" alt="Foto 17" />
+            <div class="caption">Foto 17</div>
+          </div>
+          <div class="galeri-item">
+            <img src="gambar\gambar18.jpg" alt="Foto 18" />
+            <div class="caption">Foto 18</div>
+          </div>
+        </div>
+
+        <p class="info">Galeri menggunakan CSS Flexbox | Total: 18 foto</p>
+      </div>
+    </section>
+
+    <footer>
+      <p>Fadhiel Fauzi Firoos | 253307020 &copy; 2026</p>
+    </footer>
+  </body>
+</html>

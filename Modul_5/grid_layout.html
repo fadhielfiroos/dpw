@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Fadhiel Fauzi Firoos" />
+    <meta name="nim" content="253307020" />
+    <title>Grid Layout</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+      }
+      header {
+        background-color: #666;
+        padding: 30px;
+        text-align: center;
+        font-size: 35px;
+        color: white;
+      }
+      nav {
+        float: left;
+        width: 18%;
+        min-height: 500px;
+        background: #ccc;
+        padding: 15px;
+      }
+      nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+      nav ul li {
+        margin-bottom: 5px;
+      }
+      nav ul li a {
+        text-decoration: none;
+        color: #333;
+        font-size: 13px;
+      }
+      nav ul li a:hover {
+        color: #000;
+        text-decoration: underline;
+      }
+      nav ul li a.active {
+        font-weight: bold;
+        color: #000;
+      }
+      .content-area {
+        float: left;
+        padding: 20px;
+        width: 82%;
+        background-color: #f1f1f1;
+        min-height: 500px;
+      }
+      section::after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      footer {
+        background-color: #777;
+        padding: 10px;
+        text-align: center;
+        color: white;
+        clear: both;
+      }
+      @media (max-width: 600px) {
+        nav,
+        .content-area {
+          width: 100%;
+          float: none;
+        }
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h2 {
+        background: #2c3e50;
+        color: white;
+        padding: 8px 14px;
+        border-radius: 4px;
+        margin-top: 30px;
+      }
+      p.kesimpulan {
+        background: #ecf0f1;
+        border-left: 4px solid #2196f3;
+        padding: 10px 15px;
+        font-style: italic;
+        margin: 8px 0 20px 0;
+      }
+
+      /* SKENARIO 1 */
+      .tempat_grid {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        background-color: #2196f3;
+        padding: 10px;
+        grid-column-gap: 100px;
+        grid-row-gap: 50px;
+      }
+      .item_grid {
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        padding: 20px;
+        font-size: 30px;
+        text-align: center;
+      }
+
+
+      /* SKENARIO 3*/
+      .tempat_grid_s3 {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        background-color: #2196f3;
+        padding: 10px;
+        grid-column-gap: 100px;
+        grid-row-gap: 50px;
+      }
+
+      /* SKENARIO 4*/
+      .tempat_grid_s4 {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        background-color: #2196f3;
+        padding: 10px;
+        grid-gap: 50px; 
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h3>Praktikum Desain & Pemrograman Web</h3>
+    </header>
+
+    <section>
+      <nav>
+        <ul>
+          <li><a href="box_model.html">Box Model</a></li>
+          <li><a href="flexbox.html">Flexbox</a></li>
+          <li><a href="galeri.html">Galeri</a></li>
+          <li><a href="grid_layout.html">Grid Layout</a></li>
+          <li><a href="inline_grid.html">Inline Grid</a></li>
+          <li><a href="grid_layout2.html">Grid Layout 2</a></li>
+          <li><a href="Layout.html">Layout </a></li>
+        </ul>
+      </nav>
+      <div class="content-area">
+        <h3
+          style="
+            margin-top: 0;
+            color: #000000;
+            border-bottom: 2px solid #aaa;
+            padding-bottom: 8px;
+          "
+        >
+          Test Grid Layout: Skenario 1,3,4
+        </h3>
+
+        <h2>Skenario 1</h2>
+
+        <div class="tempat_grid">
+          <div class="item_grid">1</div>
+          <div class="item_grid">2</div>
+          <div class="item_grid">3</div>
+          <div class="item_grid">4</div>
+          <div class="item_grid">5</div>
+          <div class="item_grid">6</div>
+          <div class="item_grid">7</div>
+          <div class="item_grid">8</div>
+          <div class="item_grid">9</div>
+          <div
+            class="item_grid"
+            style="font-size: 15px; text-align: left; line-height: 1.5"
+          >
+            Kesimpulan Skenario 1:<br />Property
+            <code>display: grid</code> mengubah elemen menjadi grid
+            container.<br />
+            <code>grid-template-columns: auto auto auto</code> membagi container
+            menjadi 3 kolom dengan lebar otomatis (masing-masing 1/3 lebar
+            container).<br />
+            Item grid langsung mengisi kolom dari kiri ke kanan, lalu turun ke
+            baris berikutnya secara otomatis.
+          </div>
+        </div>
+
+        <h2>Skenario 3</h2>
+        <div class="tempat_grid_s3">
+          <div class="item_grid">1</div>
+          <div class="item_grid">2</div>
+          <div class="item_grid">3</div>
+          <div class="item_grid">4</div>
+          <div class="item_grid">5</div>
+          <div class="item_grid">6</div>
+          <div class="item_grid">7</div>
+          <div class="item_grid">8</div>
+          <div class="item_grid">9</div>
+          <div
+            class="item_grid"
+            style="font-size: 15px; text-align: left; line-height: 1.5"
+          >
+            Kesimpulan Skenario 3:<br /> Property
+            <code>grid-column-gap</code> mengatur jarak horizontal antar kolom,
+            sedangkan <code>grid-row-gap</code> mengatur jarak vertikal antar
+            baris. Semakin besar nilai px yang diisi, semakin lebar celah/jarak
+            antar item grid. Kedua property ini berguna untuk memberi ruang
+            antar sel grid.
+          </div>
+        </div>
+
+        <h2>Skenario 4 </h2>
+        <div class="tempat_grid_s4">
+          <div class="item_grid">1</div>
+          <div class="item_grid">2</div>
+          <div class="item_grid">3</div>
+          <div class="item_grid">4</div>
+          <div class="item_grid">5</div>
+          <div class="item_grid">6</div>
+          <div class="item_grid">7</div>
+          <div class="item_grid">8</div>
+          <div class="item_grid">9</div>
+          <div
+            class="item_grid"
+            style="font-size: 15px; text-align: left; line-height: 1.5"
+          >
+          Kesimpulan Skenario 4: Property <code>grid-gap</code> adalah shorthand
+          yang menggabungkan <code>grid-row-gap</code> dan
+          <code>grid-column-gap</code> menjadi satu deklarasi. Dengan nilai
+          tunggal <code>grid-gap: 50px</code>, jarak antar baris DAN kolom
+          sama-sama 50px. Ini lebih ringkas daripada menulis dua property
+          terpisah. Nilai bisa juga dua angka:
+          <code>grid-gap: 30px 60px</code> (row gap 30px, column gap 60px).
+        </div>
+      </div>
+
+    </section>
+
+    <footer>
+      <p>Fadhiel Fauzi Firoos | 253307020 &copy; 2026</p>
+    </footer>
+  </body>
+</html>

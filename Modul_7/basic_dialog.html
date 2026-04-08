@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Basic Dialog jQuery</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/ui-lightness/jquery-ui.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <style>
+      button {
+        padding: 10px 24px;
+        background: #3498db;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 15px;
+        margin: 5px;
+      }
+      #dialog-konten p {
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Basic Dialog jQuery UI</h2>
+    <p>Halaman ini akan otomatis menampilkan kotak dialog saat dibuka.</p>
+    <button id="btn-buka">Buka Dialog lagi</button>
+
+    <div id="dialog-konten" title="Informasi" style="display: none">
+      <p>Ini adalah <strong>Basic Dialog</strong> menggunakan jQuery UI.</p>
+      <p>Dialog ini bisa di drag, di resize, dan di close.</p>
+      <p>
+        <strong>Nama:</strong> Fadhiel Fauzi Firoos<br />
+        <strong>NIM:</strong> 253307020
+      </p>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        $("#dialog-konten").dialog({
+          autoOpen: true,
+          width: 400,
+          modal: true,
+          buttons: {
+            OK: function () {
+              $(this).dialog("close");
+            },
+            Tutup: function () {
+              $(this).dialog("close");
+            },
+          },
+        });
+
+        $("#btn-buka").click(function () {
+          $("#dialog-konten").dialog("open");
+        });
+      });
+    </script>
+  </body>
+</html>

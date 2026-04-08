@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Fadhiel Fauzi Firoos" />
+    <meta name="nim" content="253307020" />
+    <title>Flexbox</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+      }
+      header {
+        background-color: #666;
+        padding: 30px;
+        text-align: center;
+        font-size: 35px;
+        color: white;
+      }
+      nav {
+        float: left;
+        width: 18%;
+        min-height: 500px;
+        background: #ccc;
+        padding: 15px;
+      }
+      nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+      nav ul li {
+        margin-bottom: 5px;
+      }
+      nav ul li a {
+        text-decoration: none;
+        color: #333;
+        font-size: 13px;
+      }
+      nav ul li a:hover {
+        color: #000;
+        text-decoration: underline;
+      }
+      nav ul li a.active {
+        font-weight: bold;
+        color: #000;
+      }
+      .content-area {
+        float: left;
+        padding: 20px;
+        width: 82%;
+        background-color: #f1f1f1;
+        min-height: 500px;
+      }
+      section::after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      footer {
+        background-color: #777;
+        padding: 10px;
+        text-align: center;
+        color: white;
+        clear: both;
+      }
+      @media (max-width: 600px) {
+        nav,
+        .content-area {
+          width: 100%;
+          float: none;
+        }
+      }
+
+      /* SKENARIO 1*/
+      .wadah-flex {
+        display: flex;
+        background-color: #f0e6ff;
+      }
+
+      /*SKENARIO 2 */
+      .wadah-flex > div {
+        background-color: #9b59b6;
+        margin: 10px;
+        padding: 20px;
+        font-size: 30px;
+        color: white;
+      }
+
+      /* SKENARIO 3*/
+      .wadah-flex-s3 {
+        display: flex;
+        background-color: #d5f5e3;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      .wadah-flex-s3 > div {
+        background-color: #27ae60;
+        margin: 8px;
+        padding: 15px;
+        font-size: 20px;
+        color: white;
+        width: 60px;
+        text-align: center;
+      }
+
+      /* SKENARIO 4*/
+      .wadah-flex-s4 {
+        display: flex;
+        background-color: #fef9e7;
+        flex-wrap: wrap;
+      }
+      .wadah-flex-s4 > div {
+        background-color: #f39c12;
+        margin: 8px;
+        padding: 15px;
+        font-size: 20px;
+        color: white;
+        width: 80px;
+        text-align: center;
+      }
+
+      /* SKENARIO 5 */
+      .wadah-flex-s5 {
+        display: flex;
+        background-color: #eaf4fb;
+        flex-flow: row wrap;
+      }
+      .wadah-flex-s5 > div {
+        background-color: #2980b9;
+        margin: 8px;
+        padding: 15px;
+        font-size: 20px;
+        color: white;
+        width: 80px;
+        text-align: center;
+      }
+
+      /* SKENARIO 6*/
+      .wadah-flex-s6 {
+        display: flex;
+        background-color: #fdedec;
+        flex-wrap: wrap;
+        justify-content: space-around;
+      }
+      .wadah-flex-s6 > div {
+        background-color: #c0392b;
+        margin: 8px;
+        padding: 15px;
+        font-size: 20px;
+        color: white;
+        width: 80px;
+        text-align: center;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h2 {
+        background-color: #2c3e50;
+        color: white;
+        padding: 8px 12px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h3>Praktikum Desain & Pemrograman Web</h3>
+    </header>
+
+    <section>
+      <nav>
+        <ul>
+          <li><a href="box_model.html">Box Model</a></li>
+          <li><a href="flexbox.html">Flexbox</a></li>
+          <li><a href="galeri.html">Galeri</a></li>
+          <li><a href="grid_layout.html">Grid Layout</a></li>
+          <li><a href="inline_grid.html">Inline Grid</a></li>
+          <li><a href="grid_layout2.html">Grid Layout 2</a></li>
+          <li><a href="Layout.html">Layout </a></li>
+        </ul>
+      </nav>
+      <div class="content-area">
+        <h3
+          style="
+            margin-top: 0;
+            color: #000000;
+            border-bottom: 2px solid #aaa;
+            padding-bottom: 8px;
+          "
+        >
+          Test Flexbox
+        </h3>
+
+        <h2>Skenario 1</h2>
+        <div class="wadah-flex">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+        </div>
+        <p>
+          Kesimpulan skenario 1 adalah : Dengan menambahkan
+          <code>display: flex</code> pada elemen wadah, semua div anak langsung
+          tersusun secara horizontal (baris) secara otomatis. Tanpa
+          <code>display: flex</code>, setiap div tampil sebagai blok yang
+          menempati satu baris penuh. Flexbox membuat tata letak menjadi lebih
+          fleksibel dan mudah diatur.
+        </p>
+
+        <h2>Skenario 2</h2>
+        <div class="wadah-flex">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+        </div>
+        <p>
+          Kesimpulan skenario 2 adalah : Setelah menambahkan style
+          (background-color, margin, padding, font-size) pada setiap div anak,
+          tampilan menjadi lebih rapi dan menarik. Setiap item flex memiliki
+          ruang internal (padding) dan jarak antar item (margin). Property
+          font-size memperbesar teks di dalam setiap item sehingga lebih mudah
+          dibaca.
+        </p>
+
+        <h2>Skenario 3</h2>
+        <div class="wadah-flex-s3">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+          <div>7</div>
+          <div>8</div>
+          <div>9</div>
+          <div>10</div>
+          <div>11</div>
+          <div>12</div>
+        </div>
+        <p>
+          Kesimpulan skenario 3 adalah : Property
+          <code>flex-direction</code> menentukan arah susunan item flex. Nilai
+          <strong>row</strong> (default) menyusun item dari kiri ke kanan;
+          <strong>row-reverse</strong> dari kanan ke kiri;
+          <strong>column</strong> dari atas ke bawah;
+          <strong>column-reverse</strong> dari bawah ke atas. Dengan 12 item,
+          perbedaan arah ini menjadi sangat terlihat jelas.
+        </p>
+
+        <h2>Skenario 4</h2>
+        <div class="wadah-flex-s4">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+          <div>7</div>
+          <div>8</div>
+          <div>9</div>
+          <div>10</div>
+          <div>11</div>
+          <div>12</div>
+        </div>
+        <p>
+          Kesimpulan skenario 4 adalah : Property
+          <code>flex-wrap</code> menentukan apakah item boleh turun ke baris
+          berikutnya jika tidak cukup tempat. Nilai
+          <strong>nowrap</strong> (default) memaksa semua item dalam satu baris
+          sehingga bisa meluap; <strong>wrap</strong> membuat item otomatis
+          pindah ke baris baru; <strong>wrap-reverse</strong> seperti wrap namun
+          baris dimulai dari bawah ke atas.
+        </p>
+
+        <h2>Skenario 5</h2>
+        <div class="wadah-flex-s5">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+          <div>7</div>
+          <div>8</div>
+          <div>9</div>
+          <div>10</div>
+          <div>11</div>
+          <div>12</div>
+        </div>
+        <p>
+          Kesimpulan skenario 5 adalah : Property
+          <code>flex-flow</code> merupakan shorthand (singkatan) yang
+          menggabungkan <code>flex-direction</code> dan
+          <code>flex-wrap</code> dalam satu deklarasi. Contoh:
+          <code>flex-flow: row wrap</code> berarti item disusun horizontal dan
+          bisa turun baris. Ini membuat penulisan CSS lebih ringkas dibandingkan
+          menuliskan dua property secara terpisah.
+        </p>
+
+        <h2>Skenario 6</h2>
+        <div class="wadah-flex-s6">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+        </div>
+        <p>
+          Kesimpulan skenario 6 adalah : Property
+          <code>justify-content</code> mengatur distribusi spasi antar item flex
+          pada sumbu utama (main axis). Nilai
+          <strong>flex-start</strong> menempel kiri;
+          <strong>flex-end</strong> menempel kanan;
+          <strong>center</strong> ditengah; <strong>space-between</strong> item
+          pertama dan terakhir menempel tepi, sisa spasi dibagi rata;
+          <strong>space-around</strong> setiap item mendapat spasi sama di
+          kiri-kanannya; <strong>space-evenly</strong> semua jarak (termasuk
+          tepi) sama rata.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <p>Fadhiel Fauzi Firoos | 253307020 &copy; 2026</p>
+    </footer>
+  </body>
+</html>

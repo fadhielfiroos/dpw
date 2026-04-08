@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Event</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Fadhiel Fauzi Firoos" />
+    <meta name="nim" content="253307020" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      header {
+        background-color: #666;
+        padding: 30px;
+        text-align: center;
+        font-size: 35px;
+        color: white;
+      }
+      nav {
+        float: left;
+        width: 30%;
+        background: #ccc;
+        padding: 20px;
+        min-height: 300px;
+      }
+      nav ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      nav ul li a {
+        text-decoration: none;
+        color: #333;
+      }
+      nav ul li a:hover {
+        color: #000;
+        text-decoration: underline;
+      }
+      article {
+        float: left;
+        padding: 20px;
+        width: 70%;
+        background-color: #f1f1f1;
+        min-height: 300px;
+      }
+      section::after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      footer {
+        background-color: #777;
+        padding: 10px;
+        text-align: center;
+        color: white;
+      }
+      @media (max-width: 600px) {
+        nav,
+        article {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .gallery img {
+        width: 180px;
+        height: 130px;
+        object-fit: cover;
+        border: 2px solid #aaa;
+        cursor: pointer;
+        transition:
+          transform 0.2s,
+          border-color 0.2s;
+      }
+
+      #info-box {
+        margin-top: 12px;
+        padding: 8px 12px;
+        background: #fffde7;
+        border-left: 4px solid #f9a825;
+        font-size: 14px;
+        min-height: 32px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h2>Album pt2</h2>
+    </header>
+
+    <section>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="gambar.html">Gambar</a></li>
+          <li><a href="event.html">Event</a></li>
+          <li><a href="audio.html">Audio</a></li>
+          <li><a href="video.html">Video</a></li>
+          <li><a href="svg.html">SVG</a></li>
+          <li><a href="canvas.html">Canvas</a></li>
+          <li><a href="pendaftaran.html">Pendaftaran</a></li>
+        </ul>
+      </nav>
+
+      <article>
+        <h1>Gambar dengan Mouse Event</h1>
+        <p><em>Test arahkan, klik, dan double-klik pada gambar.</p>
+
+        <div class="gallery">
+          <img
+            src="Gambar\gambar1.jpg"
+            alt="Pemandangan 1"
+            onmouseover="
+              this.style.transform = 'scale(1.1)';
+              this.style.borderColor = '#e74c3c';
+              info('Mouse masuk ke Gambar 1');
+            "
+            onmouseout="
+              this.style.transform = 'scale(1)';
+              this.style.borderColor = '#aaa';
+              info('Mouse keluar dari Gambar 1');
+            "
+          />
+
+          <img
+            src="Gambar/gambar2.jpg"
+            alt="Pemandangan 2"
+            onclick="info('Gambar 2 diklik!')"
+            onmouseover="info('Hover Gambar 2')"
+            onmouseout="info('')"
+          />
+
+          <img
+            src="Gambar/gambar3.jpg"
+            alt="Pemandangan 3"
+            ondblclick="alert('Double klik pada Gambar 3!')"
+            onmouseover="info('Double klik Gambar 3 untuk alert')"
+            onmouseout="info('')"
+          />
+
+          <img
+            src="Gambar/gambar4.jpg"
+            alt="Pemandangan 4"
+            onmousedown="
+              this.style.opacity = '0.5';
+              info('Mouse ditekan pada Gambar 4');
+            "
+            onmouseup="
+              this.style.opacity = '1';
+              info('Mouse dilepas pada Gambar 4');
+            "
+          />
+
+          <img
+            src="Gambar/gambar5.jpg"
+            alt="Pemandangan 5"
+            onmousemove="
+              info(
+                'Mouse bergerak di atas Gambar 5 — x:' +
+                  event.offsetX +
+                  ' y:' +
+                  event.offsetY,
+              )
+            "
+            onmouseout="info('')"
+          />
+
+          <img
+            src="Gambar/gambar6.jpg"
+            alt="Pemandangan 6"
+            onmouseover="
+              this.style.borderColor = '#27ae60';
+              info('Hover Gambar 6');
+            "
+            onmouseout="
+              this.style.borderColor = '#aaa';
+              info('');
+            "
+            onclick="info('Gambar 6 diklik — klik kanan untuk context menu')"
+          />
+        </div>
+      </article>
+    </section>
+
+    <footer>
+      <p>Fadhiel Fauzi Firoos | 253307020 &copy; 2026</p>
+    </footer>
+
+    <script>
+      function info(pesan) {
+        document.getElementById("info-box").innerText =
+          pesan || "Arahkan mouse ke gambar...";
+      }
+    </script>
+  </body>
+</html>

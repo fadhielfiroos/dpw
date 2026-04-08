@@ -1,0 +1,46 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#header {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+#main {
+  display: flex;
+  min-height: 400px;
+}
+
+#link {
+  width: 180px;
+  flex-shrink: 0;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+#link ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#link li {
+  margin-bottom: 10px;
+}
+
+#content {
+  flex: 3;
+  padding: 20px;
+}
+
+#footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  clear: both;
+}

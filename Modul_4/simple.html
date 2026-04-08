@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Fadhiel Fauzi Firoos" />
+    <meta name="nim" content="253307020" />
+    <title>CSS Simple Selectors</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+      }
+      header {
+        background-color: #666;
+        padding: 30px;
+        text-align: center;
+        font-size: 35px;
+        color: white;
+      }
+      nav {
+        float: left;
+        width: 18%;
+        min-height: 500px;
+        background: #ccc;
+        padding: 15px;
+      }
+      nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+      nav ul li {
+        margin-bottom: 5px;
+      }
+      nav ul li a {
+        text-decoration: none;
+        color: #333;
+        font-size: 13px;
+      }
+      nav ul li a:hover {
+        color: #000;
+        text-decoration: underline;
+      }
+      nav ul li a.active {
+        font-weight: bold;
+        color: #000;
+      }
+      .content-area {
+        float: left;
+        padding: 20px;
+        width: 82%;
+        background-color: #f1f1f1;
+        min-height: 500px;
+      }
+      section::after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      footer {
+        background-color: #777;
+        padding: 10px;
+        text-align: center;
+        color: white;
+        clear: both;
+      }
+      @media (max-width: 600px) {
+        nav,
+        .content-area {
+          width: 100%;
+          float: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h2>Praktikum Desain & Pemrograman Web</h2>
+    </header>
+
+    <section>
+      <nav>
+        <ul>
+          <li><a href="simple.html">Simple </a></li>
+          <li><a href="combinator.html">Combinator</a></li>
+          <li><a href="pseudo.html">Pseudo-class</a></li>
+          <li><a href="pseudo_elemen.html">Pseudo-element</a></li>
+          <li><a href="header.html">Header</a></li>
+          <li><a href="selector.html">Selector </a></li>
+          <li><a href="border-style.html">Border Style</a></li>
+          <li><a href="margin.html">Margin</a></li>
+          <li><a href="hyperlink.html">Hyperlink</a></li>
+          <li><a href="padding.html">Padding</a></li>
+          <li><a href="display.html">Display</a></li>
+          <li><a href="template.html">Template</a></li>
+        </ul>
+      </nav>
+      <div class="content-area">
+        <h2
+          style="
+            margin-top: 0;
+            color: #444;
+            border-bottom: 2px solid #aaa;
+            padding-bottom: 8px;
+          "
+        >
+          CSS Simple Selectors
+        </h2>
+
+        <style>
+          .demo-area p {
+            border: 2px solid #333;
+            padding: 10px;
+            margin: 8px 0;
+          }
+          .demo-area #kalimat {
+            text-align: left;
+            color: red;
+            background-color: #ffe0e0;
+          }
+          .demo-area .center {
+            text-align: center;
+            color: chocolate;
+            background-color: #fff3e0;
+          }
+          .demo-area p.tengah {
+            text-align: center;
+            color: darkmagenta;
+            display: block;
+            background-color: #777;
+          }
+          .demo-area p.default {
+            text-align: center;
+            color: aqua;
+            background-color: #f0f0f0;
+          }
+        </style>
+        <div class="demo-area">
+          <p class="default">
+            Penggunaan CSS sangat membantu web desainer dalam menyusun halaman
+            yang konsisten pada proyek pembuatan halaman web
+          </p>
+          <p id="kalimat">
+            Dalam penulisan CSS sangat sederhana namun powerful dalam desain
+          </p>
+          <p class="center">
+            CSS mempunyai sifat pewarisan secara default style anak akan
+            mewarisi style dari parent
+          </p>
+          <p class="tengah">
+            Ini adalah hasil selector dengan elemen p dengan class tengah
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>Fadhiel Fauzi Firoos | 253307020 &copy; 2026</p>
+    </footer>
+  </body>
+</html>

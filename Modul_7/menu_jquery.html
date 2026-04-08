@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Menu jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        background: #f0f0f0;
+      }
+
+      /* Navbar */
+      nav {
+        background-color: #2c3e50;
+      }
+      nav ul {
+        list-style: none;
+        display: flex;
+      }
+      nav ul li {
+        position: relative;
+      }
+      nav ul li a {
+        display: block;
+        color: white;
+        padding: 15px 20px;
+        text-decoration: none;
+        font-size: 14px;
+      }
+      nav ul li a:hover {
+        background-color: #3498db;
+      }
+
+      /* Dropdown */
+      nav ul li ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: #34495e;
+        min-width: 160px;
+        z-index: 100;
+      }
+      nav ul li ul li a {
+        padding: 10px 20px;
+        font-size: 13px;
+      }
+      nav ul li ul li a:hover {
+        background-color: #2980b9;
+      }
+
+      /* Konten */
+      .konten {
+        padding: 40px;
+        text-align: center;
+      }
+      #info {
+        margin-top: 20px;
+        padding: 15px;
+        background: #3498db;
+        color: white;
+        border-radius: 6px;
+        display: inline-block;
+        min-width: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="#" class="menu-item" data-menu="Home">Home</a></li>
+        <li>
+          <a href="#" class="menu-item" data-menu="Profil">Profil ▾</a>
+          <ul class="dropdown">
+            <li>
+              <a href="#" class="menu-item" data-menu="Tentang Kami"
+                >Tentang Kami</a
+              >
+            </li>
+            <li>
+              <a href="#" class="menu-item" data-menu="Visi Misi">Visi Misi</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#" class="menu-item" data-menu="Layanan">Layanan ▾</a>
+          <ul class="dropdown">
+            <li>
+              <a href="#" class="menu-item" data-menu="Layanan EPEP"
+                >Layanan EPEP</a
+              >
+            </li>
+            <li>
+              <a href="#" class="menu-item" data-menu="Layanan EMEL"
+                >Layanan EMEL</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li><a href="#" class="menu-item" data-menu="Kontak">Kontak</a></li>
+      </ul>
+    </nav>
+
+    <div class="konten">
+      <h2>Menu dengan jQuery</h2>
+      <p>klik menu untuk melihat info.</p>
+      <div id="info">Menu belum dipilih</div>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        $("nav ul li").hover(
+          function () {
+            $(this).find(".dropdown").stop(true, true).slideDown(200);
+          },
+          function () {
+            $(this).find(".dropdown").stop(true, true).slideUp(200);
+          },
+        );
+
+        $(".menu-item").click(function (e) {
+          e.preventDefault();
+          var namaMenu = $(this).data("menu");
+          $("#info")
+            .hide()
+            .text("Anda memilih: " + namaMenu)
+            .fadeIn(300);
+        });
+      });
+    </script>
+  </body>
+</html>

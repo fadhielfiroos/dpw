@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Fadhiel Fauzi Firoos" />
+    <meta name="nim" content="253307020" />
+    <title>Template Website CSS (Studi Kasus)</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+      }
+      header {
+        background-color: #666;
+        padding: 30px;
+        text-align: center;
+        font-size: 35px;
+        color: white;
+      }
+      nav {
+        float: left;
+        width: 18%;
+        min-height: 500px;
+        background: #ccc;
+        padding: 15px;
+      }
+      nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+      nav ul li {
+        margin-bottom: 5px;
+      }
+      nav ul li a {
+        text-decoration: none;
+        color: #333;
+        font-size: 13px;
+      }
+      nav ul li a:hover {
+        color: #000;
+        text-decoration: underline;
+      }
+      nav ul li a.active {
+        font-weight: bold;
+        color: #000;
+      }
+      .content-area {
+        float: left;
+        padding: 20px;
+        width: 82%;
+        background-color: #f1f1f1;
+        min-height: 500px;
+      }
+      section::after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      footer {
+        background-color: #777;
+        padding: 10px;
+        text-align: center;
+        color: white;
+        clear: both;
+      }
+      @media (max-width: 600px) {
+        nav,
+        .content-area {
+          width: 100%;
+          float: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h2>Praktikum Desain & Pemrograman Web</h2>
+    </header>
+
+    <section>
+      <nav>
+        <ul>
+          <li><a href="simple.html">Simple </a></li>
+          <li><a href="combinator.html">Combinator</a></li>
+          <li><a href="pseudo.html">Pseudo-class</a></li>
+          <li><a href="pseudo_elemen.html">Pseudo-element</a></li>
+          <li><a href="header.html">Header</a></li>
+          <li><a href="selector.html">Selector </a></li>
+          <li><a href="border-style.html">Border Style</a></li>
+          <li><a href="margin.html">Margin</a></li>
+          <li><a href="hyperlink.html">Hyperlink</a></li>
+          <li><a href="padding.html">Padding</a></li>
+          <li><a href="display.html">Display</a></li>
+          <li><a href="template.html">Template</a></li>
+        </ul>
+      </nav>
+      <div class="content-area">
+        <h2
+          style="
+            margin-top: 0;
+            color: #444;
+            border-bottom: 2px solid #aaa;
+            padding-bottom: 8px;
+          "
+        ></h2>
+
+        <style>
+          .tmpl-wrap {
+            border: 1px solid #aaa;
+            max-width: 700px;
+            font-family: Arial;
+          }
+          .tmpl-header {
+            background: blue;
+            color: white;
+            padding: 15px 20px;
+          }
+          .tmpl-header h1 {
+            color: yellow;
+            margin: 0 0 4px 0;
+            font-size: 22px;
+          }
+          .tmpl-header p {
+            margin: 0;
+            font-size: 13px;
+          }
+          .tmpl-body {
+            display: flex;
+            min-height: 200px;
+          }
+          .tmpl-sidebar {
+            width: 180px;
+            border: 2px dashed #555;
+            margin: 10px;
+            padding: 12px;
+            flex-shrink: 0;
+          }
+          .tmpl-sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+          }
+          .tmpl-sidebar ul li {
+            margin-bottom: 6px;
+            font-size: 14px;
+          }
+          .tmpl-sidebar ul li a {
+            text-decoration: none;
+            color: #000;
+          }
+          .tmpl-sidebar ul li a.def {
+            text-decoration: underline;
+            font-weight: bold;
+          }
+          .tmpl-divider {
+            width: 2px;
+            background: #bbb;
+            margin: 10px 0;
+          }
+          .tmpl-main {
+            flex: 1;
+            padding: 15px 20px;
+            text-align: center;
+          }
+          .tmpl-logo {
+            width: 70px;
+            height: 70px;
+            background: #ddd;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            color: #666;
+            margin-bottom: 8px;
+          }
+          .tmpl-main h2 {
+            margin: 4px 0;
+          }
+          .tmpl-main p {
+            color: blue;
+            font-size: 12px;
+            max-width: 280px;
+            margin: 0 auto;
+          }
+          .tmpl-footer {
+            background: #d9d9d9;
+            text-align: right;
+            padding: 8px 15px;
+            font-size: 12px;
+          }
+        </style>
+        <div class="tmpl-wrap">
+          <div class="tmpl-header">
+            <h1>Halo CSS !</h1>
+            <p>Ini adalah website CSS saya</p>
+          </div>
+          <div class="tmpl-body">
+            <div class="tmpl-sidebar">
+              <ul>
+                <li><a href="#">Menu 1</a></li>
+                <li><a href="#">Menu 2</a></li>
+                <li><a href="#">Menu 3</a></li>
+                <li><a href="#">Menu 4</a></li>
+                <li><a href="#">Menu 5</a></li>
+                <li>
+                  <a href="#" class="def">Menu 6</a>
+                  <small style="color: gray">Link default</small>
+                </li>
+              </ul>
+            </div>
+            <div class="tmpl-main">
+              <div style="font-size: 50px"><img src="gambar/pnm.png" /></div>
+              <div class="logo-text">TI</div>
+
+              <h2>TI</h2>
+              <h3 style="font-weight: normal; margin: 4px 0 10px">
+                Politeknik Negeri Madiun
+              </h3>
+              <p>
+                Mewujudkan pendidikan tinggi vokasi dalam bidang Teknologi
+                Informasi dan penerapannya yang berkualitas, inovatif dan
+                berdaya saing Nasional.
+              </p>
+            </div>
+          </div>
+          <div class="tmpl-footer">
+            Fadhiel Fauzi Firoos | 253307020 | TI-08
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>Fadhiel Fauzi Firoos | 253307020 &copy; 2026</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Fadhiel Fauzi Firoos" />
+    <meta name="NIM" content="253307020" />
+    <title>CSS Border Style</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+      }
+      header {
+        background-color: #666;
+        padding: 30px;
+        text-align: center;
+        font-size: 35px;
+        color: white;
+      }
+      nav {
+        float: left;
+        width: 18%;
+        min-height: 500px;
+        background: #ccc;
+        padding: 15px;
+      }
+      nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+      nav ul li {
+        margin-bottom: 5px;
+      }
+      nav ul li a {
+        text-decoration: none;
+        color: #333;
+        font-size: 13px;
+      }
+      nav ul li a:hover {
+        color: #000;
+        text-decoration: underline;
+      }
+      nav ul li a.active {
+        font-weight: bold;
+        color: #000;
+      }
+      .content-area {
+        float: left;
+        padding: 20px;
+        width: 82%;
+        background-color: #f1f1f1;
+        min-height: 500px;
+      }
+      section::after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      footer {
+        background-color: #777;
+        padding: 10px;
+        text-align: center;
+        color: white;
+        clear: both;
+      }
+      @media (max-width: 600px) {
+        nav,
+        .content-area {
+          width: 100%;
+          float: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h2>Praktikum Desain & Pemrograman Web</h2>
+    </header>
+
+    <section>
+      <nav>
+        <ul>
+          <li><a href="simple.html">Simple </a></li>
+          <li><a href="combinator.html">Combinator</a></li>
+          <li><a href="pseudo.html">Pseudo-class</a></li>
+          <li><a href="pseudo_elemen.html">Pseudo-element</a></li>
+          <li><a href="header.html">Header</a></li>
+          <li><a href="selector.html">Selector </a></li>
+          <li><a href="border-style.html">Border Style</a></li>
+          <li><a href="margin.html">Margin</a></li>
+          <li><a href="hyperlink.html">Hyperlink</a></li>
+          <li><a href="padding.html">Padding</a></li>
+          <li><a href="display.html">Display</a></li>
+          <li><a href="template.html">Template</a></li>
+        </ul>
+      </nav>
+      <div class="content-area">
+        <h2
+          style="
+            margin-top: 0;
+            color: #444;
+            border-bottom: 2px solid #aaa;
+            padding-bottom: 8px;
+          "
+        >
+          CSS Border Style
+        </h2>
+
+        <style>
+          .bs p,
+          .bs span {
+            padding: 6px 10px;
+            margin: 5px 0;
+            display: block;
+          }
+          .bs .dotted {
+            border-style: dotted;
+          }
+          .bs .dashed {
+            border-style: dashed;
+          }
+          .bs .solid {
+            border-style: solid;
+          }
+          .bs .double {
+            border-style: double;
+          }
+          .bs .groove {
+            border-style: groove;
+          }
+          .bs .ridge {
+            border-style: ridge;
+          }
+          .bs .inset {
+            border-style: inset;
+          }
+          .bs .outset {
+            border-style: outset;
+          }
+          .bs .none {
+            border-style: none;
+          }
+          .bs-span span {
+            display: inline-block;
+            margin: 4px;
+            padding: 5px 10px;
+          }
+        </style>
+        <div class="bs">
+          <h3>Border pada &lt;p&gt;</h3>
+          <p class="dotted">A dotted border.</p>
+          <p class="dashed">A dashed border.</p>
+          <p class="solid">A solid border.</p>
+          <p class="double">A double border.</p>
+          <p class="groove">A groove border.</p>
+          <p class="none">No border.</p>
+        </div>
+        <div class="bs bs-span" style="margin-top: 10px">
+          <h3>Border pada &lt;span&gt;</h3>
+          <span class="ridge">Ridge border (span)</span>
+          <span class="inset">Inset border (span)</span>
+          <span class="dotted">Dotted border (span)</span>
+          <span class="outset">Outset border (span)</span>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>Fadhiel Fauzi Firoos | 253307020 &copy; 2026</p>
+    </footer>
+  </body>
+</html>

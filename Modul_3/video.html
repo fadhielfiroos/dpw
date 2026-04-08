@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Video</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Fadhiel Fauzi Firoos" />
+    <meta name="nim" content="253307020" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      header {
+        background-color: #666;
+        padding: 30px;
+        text-align: center;
+        font-size: 35px;
+        color: white;
+      }
+      nav {
+        float: left;
+        width: 30%;
+        background: #ccc;
+        padding: 20px;
+        min-height: 400px;
+      }
+      nav ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      nav ul li a {
+        text-decoration: none;
+        color: #333;
+      }
+      nav ul li a:hover {
+        color: #000;
+        text-decoration: underline;
+      }
+      article {
+        float: left;
+        padding: 20px;
+        width: 70%;
+        background-color: #f1f1f1;
+        min-height: 400px;
+      }
+      section::after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      footer {
+        background-color: #777;
+        padding: 10px;
+        text-align: center;
+        color: white;
+      }
+      @media (max-width: 600px) {
+        nav,
+        article {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+    </style>
+  </head>
+  <body>
+    <header>
+      <h2>Videos</h2>
+    </header>
+
+    <section>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="gambar.html">Gambar</a></li>
+          <li><a href="event.html">Event</a></li>
+          <li><a href="audio.html">Audio</a></li>
+          <li><a href="video.html">Video</a></li>
+          <li><a href="svg.html">SVG</a></li>
+          <li><a href="canvas.html">Canvas</a></li>
+          <li><a href="pendaftaran.html">Pendaftaran</a></li>
+        </ul>
+      </nav>
+
+      <article>
+        <h1>Pemutar Video</h1>
+
+        <p><strong>Video Lokal:</strong></p>
+        <video width="400" height="300" controls muted>
+          <source src="Gambar\video1.mp4" type="video/mp4" />
+          Browser tidak mendukung.
+        </video>
+
+        <p>
+          <strong>Kesimpulan Video Lokal:</strong><br />
+          Atribut controls menampilkan tombol kontrol video.<br />
+          Atribut autoplay memutar video otomatis saat halaman dibuka,<br />
+          namun browser modern mengharuskan muted agar autoplay berfungsi.<br />
+          Atribut muted membuat video bisu saat pertama diputar.
+        </p>
+
+        <br />
+        <p><strong>Video dari YouTube (iframe):</strong></p>
+
+        <div
+          style="
+            left: 0;
+            width: 100%;
+            height: 0;
+            position: relative;
+            padding-bottom: 56.25%;
+          "
+        >
+          <iframe
+            src="https://www.youtube.com/embed/MsgnG-Gca-0?rel=0"
+            style="
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              border: 0;
+            "
+            allowfullscreen
+            scrolling="no"
+            allow="
+              accelerometer *;
+              clipboard-write *;
+              encrypted-media *;
+              gyroscope *;
+              picture-in-picture *;
+              web-share *;
+            "
+            referrerpolicy="strict-origin"
+          ></iframe>
+        </div>
+        tools: iframely.com
+        <p
+          <strong>Kesimpulan iframe:</strong><br />
+          Tag iframe digunakan untuk menyematkan halaman
+          lain (seperti video YouTube) di dalam halaman kita.<br /> Atribut
+          src menggunakan URL embed YouTube (bukan URL biasa).<br />
+          width dan height menentukan ukuran kotak
+          video.<br /><br />
+      </p>
+      </article>
+    </section>
+
+    <footer>
+      <p>Fadhiel Fauzi Firoos | 253307020 &copy; 2026</p>
+    </footer>
+  </body>
+</html>

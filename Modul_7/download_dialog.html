@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Download Dialog + Progressbar</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/ui-lightness/jquery-ui.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 40px;
+        background: #f0f0f0;
+      }
+      h2 {
+        color: #2c3e50;
+      }
+      button {
+        padding: 10px 24px;
+        background: #27ae60;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 15px;
+      }
+
+      #progress-bar {
+        margin: 15px 0;
+        height: 22px;
+        border-radius: 4px;
+      }
+      #progress-label {
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #333;
+      }
+      #status-text {
+        color: #555;
+        font-size: 14px;
+        margin-top: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Download Dialog + Progressbar</h2>
+    <p>Klik tombol untuk memulai simulasi download:</p>
+    <button id="btn-download">Download File</button>
+
+    <div id="download-dialog" title="Mengunduh File..." style="display: none">
+      <p><strong>File:</strong> modul_praktikum.pdf</p>
+      <div id="progress-label">0%</div>
+      <div id="progress-bar"></div>
+      <div id="status-text">Mempersiapkan download...</div>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        var timer;
+        var nilai = 0;
+
+        $("#progress-bar").progressbar({ value: 0 });
+
+        $("#download-dialog").dialog({
+          autoOpen: false,
+          width: 420,
+          modal: true,
+          closeOnEscape: false,
+          open: function () {
+            nilai = 0;
+            $("#progress-bar").progressbar("value", 0);
+            $("#progress-label").text("0%");
+            $("#status-text").text("Mempersiapkan download...");
+
+            timer = setInterval(function () {
+              nilai += Math.floor(Math.random() * 8) + 3;
+              if (nilai >= 100) {
+                nilai = 100;
+                clearInterval(timer);
+                $("#status-text").text(" Download selesai!");
+                setTimeout(function () {
+                  $("#download-dialog").dialog("option", "buttons", {
+                    Tutup: function () {
+                      $(this).dialog("close");
+                    },
+                  });
+                }, 500);
+              }
+              $("#progress-bar").progressbar("value", nilai);
+              $("#progress-label").text(nilai + "%");
+              if (nilai < 100) {
+                var pesan = [
+                  "Mengunduh data...",
+                  "Memproses file...",
+                  "Hampir selesai...",
+                ];
+                $("#status-text").text(pesan[Math.floor(nilai / 35)]);
+              }
+            }, 300);
+          },
+          beforeClose: function () {
+            clearInterval(timer);
+          },
+          buttons: {},
+        });
+
+        $("#btn-download").click(function () {
+          $("#download-dialog").dialog("open");
+        });
+      });
+    </script>
+  </body>
+</html>

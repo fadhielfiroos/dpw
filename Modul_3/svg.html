@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>SVG</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Fadhiel Fauzi Firoos" />
+    <meta name="nim" content="253307020" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      header {
+        background-color: #666;
+        padding: 30px;
+        text-align: center;
+        font-size: 35px;
+        color: white;
+      }
+      nav {
+        float: left;
+        width: 30%;
+        background: #ccc;
+        padding: 20px;
+        min-height: 600px;
+      }
+      nav ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      nav ul li a {
+        text-decoration: none;
+        color: #333;
+      }
+      nav ul li a:hover {
+        color: #000;
+        text-decoration: underline;
+      }
+      article {
+        float: left;
+        padding: 20px;
+        width: 70%;
+        background-color: #f1f1f1;
+        min-height: 600px;
+      }
+      section::after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      footer {
+        background-color: #777;
+        padding: 10px;
+        text-align: center;
+        color: white;
+      }
+      @media (max-width: 600px) {
+        nav,
+        article {
+          width: 100%;
+          height: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h2>Judul Website</h2>
+    </header>
+
+    <section>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="gambar.html">Gambar</a></li>
+          <li><a href="event.html">Event</a></li>
+          <li><a href="audio.html">Audio</a></li>
+          <li><a href="video.html">Video</a></li>
+          <li><a href="svg.html">SVG</a></li>
+          <li><a href="canvas.html">Canvas</a></li>
+          <li><a href="pendaftaran.html">Pendaftaran</a></li>
+        </ul>
+      </nav>
+
+      <article>
+        <h1>SVG (Scalable Vector Graphics)</h1>
+
+        <p>
+          <strong>1. Lingkaran kuning dengan border hijau:</strong>
+        </p>
+        <svg width="100" height="100">
+          <circle
+            cx="50"
+            cy="50"
+            r="40"
+            stroke="green"
+            stroke-width="4"
+            fill="yellow"
+          />
+        </svg>
+
+        <p><strong>2. Kotak biru dengan border hitam:</strong></p>
+        <svg width="100" height="100">
+          <rect
+            width="400"
+            height="100"
+            style="fill: rgb(0, 0, 255); stroke-width: 10; stroke: rgb(0, 0, 0)"
+          />
+        </svg>
+
+        <p>
+          <strong>3. Kotak merah transparan dengan sudut melengkung:</strong>
+        </p>
+        <svg width="400" height="180">
+          <rect
+            x="50"
+            y="20"
+            rx="20"
+            ry="20"
+            width="150"
+            height="150"
+            style="fill: red; stroke: black; stroke-width: 5; opacity: 0.5"
+          />
+        </svg>
+
+        <p>
+          <strong>4. Segitiga hijau:</strong>
+        </p>
+        <svg width="300" height="250">
+          <polygon
+            points="150,10 20,240 280,240"
+            style="fill: green; stroke: black; stroke-width: 2"
+          />
+        </svg>
+
+        <p><strong>5. Polygon bintang:</strong></p>
+        <svg width="200" height="200">
+          <polygon
+            points="100,10 40,180 190,60 10,60 160,180"
+            style="
+              fill: gold;
+              stroke: orange;
+              stroke-width: 3;
+              fill-rule: nonzero;
+            "
+          />
+        </svg>
+      </article>
+    </section>
+
+    <footer>
+      <p>Fadhiel Fauzi Firoos | 253307020 &copy; 2026</p>
+    </footer>
+  </body>
+</html>

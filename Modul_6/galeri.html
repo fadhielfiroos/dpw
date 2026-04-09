@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gallery</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <style>
+      .gallery-item {
+        overflow: hidden;
+        border-radius: 10px;
+        position: relative;
+        cursor: pointer;
+      }
+      .gallery-img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        transition: transform 0.4s;
+      }
+      .gallery-item:hover .gallery-img {
+        transform: scale(1.1);
+      }
+      .gallery-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(13, 110, 253, 0.75);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        opacity: 0;
+        transition: 0.3s;
+      }
+      .gallery-item:hover .gallery-overlay {
+        opacity: 1;
+      }
+      .color-box {
+        width: 100%;
+        height: 200px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 40px;
+        color: white;
+      }
+      footer {
+        background: #212529;
+      }
+    </style>
+  </head>
+  <body class="bg-light">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html"
+          >Ma<span style="color: #0dcaf0">Web</span></a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navMenu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="profil.html">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="galeri.html">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="kontak.html">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="services.html">Services</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HEADER -->
+    <div class="bg-success text-white py-5 text-center">
+      <div class="container">
+        <h2 class="fw-bold">
+          <i class="bi bi-images me-2"></i>Gallery Portofolio
+        </h2>
+        <p class="lead mb-0">
+          Kumpulan Portofolio praktikum bahasa pemrograman
+        </p>
+      </div>
+    </div>
+
+    <!-- FILTER TABS -->
+    <div class="container py-4">
+      <ul class="nav nav-pills justify-content-center mb-4" id="galeriTab">
+        <li class="nav-item">
+          <a class="nav-link active" href="#" data-filter="all">Semua</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-filter="html">HTML/CSS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-filter="js">JavaScript</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-filter="bootstrap">Java</a>
+        </li>
+      </ul>
+
+      <!-- GRID GALERI -->
+      <div class="row g-3" id="galeriGrid">
+        <!-- Item 1 -->
+        <div class="col-md-4 col-sm-6 galeri-card" data-cat="html">
+          <div class="gallery-item shadow-sm">
+            <div
+              class="color-box"
+              style="background: linear-gradient(135deg, #e74c3c, #c0392b)"
+            >
+              <i class="bi bi-filetype-html"></i>
+            </div>
+            <div class="gallery-overlay">
+              <i class="bi bi-zoom-in fs-3 mb-2"></i>
+              <h6 class="fw-bold">Halaman HTML Dasar</h6>
+              <small>HTML / CSS</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="col-md-4 col-sm-6 galeri-card" data-cat="html">
+          <div class="gallery-item shadow-sm">
+            <div
+              class="color-box"
+              style="background: linear-gradient(135deg, #3498db, #1abc9c)"
+            >
+              <i class="bi bi-grid-3x3-gap"></i>
+            </div>
+            <div class="gallery-overlay">
+              <i class="bi bi-zoom-in fs-3 mb-2"></i>
+              <h6 class="fw-bold">CSS Grid Layout</h6>
+              <small>HTML / CSS</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="col-md-4 col-sm-6 galeri-card" data-cat="html">
+          <div class="gallery-item shadow-sm">
+            <div
+              class="color-box"
+              style="background: linear-gradient(135deg, #9b59b6, #8e44ad)"
+            >
+              <i class="bi bi-layout-sidebar"></i>
+            </div>
+            <div class="gallery-overlay">
+              <i class="bi bi-zoom-in fs-3 mb-2"></i>
+              <h6 class="fw-bold">CSS Flexbox</h6>
+              <small>HTML / CSS</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="col-md-4 col-sm-6 galeri-card" data-cat="js">
+          <div class="gallery-item shadow-sm">
+            <div
+              class="color-box"
+              style="background: linear-gradient(135deg, #f39c12, #e67e22)"
+            >
+              <i class="bi bi-filetype-js"></i>
+            </div>
+            <div class="gallery-overlay">
+              <i class="bi bi-zoom-in fs-3 mb-2"></i>
+              <h6 class="fw-bold">Program Alert JS</h6>
+              <small>JavaScript</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="col-md-4 col-sm-6 galeri-card" data-cat="js">
+          <div class="gallery-item shadow-sm">
+            <div
+              class="color-box"
+              style="background: linear-gradient(135deg, #27ae60, #2ecc71)"
+            >
+              <i class="bi bi-clock-fill"></i>
+            </div>
+            <div class="gallery-overlay">
+              <i class="bi bi-zoom-in fs-3 mb-2"></i>
+              <h6 class="fw-bold">Jam Real Time JS</h6>
+              <small>JavaScript</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 6 -->
+        <div class="col-md-4 col-sm-6 galeri-card" data-cat="js">
+          <div class="gallery-item shadow-sm">
+            <div
+              class="color-box"
+              style="background: linear-gradient(135deg, #e91e63, #c2185b)"
+            >
+              <i class="bi bi-ui-checks"></i>
+            </div>
+            <div class="gallery-overlay">
+              <i class="bi bi-zoom-in fs-3 mb-2"></i>
+              <h6 class="fw-bold">jQuery Dialog</h6>
+              <small>JavaScript / jQuery</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 7 -->
+        <div class="col-md-4 col-sm-6 galeri-card" data-cat="bootstrap">
+          <div class="gallery-item shadow-sm">
+            <div
+              class="color-box"
+              style="background: linear-gradient(135deg, #0d6efd, #6610f2)"
+            >
+              <i class="bi bi-shop"></i>
+            </div>
+            <div class="gallery-overlay">
+              <i class="bi bi-zoom-in fs-3 mb-2"></i>
+              <h6 class="fw-bold">Tampilan Toko Java</h6>
+              <small>NetBeans</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 8 -->
+        <div class="col-md-4 col-sm-6 galeri-card" data-cat="bootstrap">
+          <div class="gallery-item shadow-sm">
+            <div
+              class="color-box"
+              style="background: linear-gradient(135deg, #0dcaf0, #0d6efd)"
+            >
+              <i class="bi bi-cash-stack"></i>
+            </div>
+            <div class="gallery-overlay">
+              <i class="bi bi-zoom-in fs-3 mb-2"></i>
+              <h6 class="fw-bold">Halaman Kasir Java</h6>
+              <small>NetBeans</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 9 -->
+        <div class="col-md-4 col-sm-6 galeri-card" data-cat="bootstrap">
+          <div class="gallery-item shadow-sm">
+            <div
+              class="color-box"
+              style="background: linear-gradient(135deg, #198754, #20c997)"
+            >
+              <i class="bi bi-person-vcard"></i>
+            </div>
+            <div class="gallery-overlay">
+              <i class="bi bi-zoom-in fs-3 mb-2"></i>
+              <h6 class="fw-bold">Halaman Biodata Java</h6>
+              <small>NetBeans</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end row -->
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="text-white py-4 mt-4">
+      <div class="container text-center">
+        <p class="mb-1">
+          &copy; 2026 Tutorial CSS Framework | Fadhiel Fauzi Firoos | NIM:
+          253307020
+        </p>
+        <p class="mb-0 text-muted small">
+          Praktikum CSS Framework Politeknik Negeri Madiun &copy; 2026
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Filter galeri
+      document.querySelectorAll("#galeriTab .nav-link").forEach((link) => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          document
+            .querySelectorAll("#galeriTab .nav-link")
+            .forEach((l) => l.classList.remove("active"));
+          this.classList.add("active");
+          const filter = this.dataset.filter;
+          document.querySelectorAll(".galeri-card").forEach((card) => {
+            card.style.display =
+              filter === "all" || card.dataset.cat === filter ? "" : "none";
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
